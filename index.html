@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="N. Eesh Kumar — Aspiring UI/UX Designer crafting intuitive, user-centered digital experiences.">
+  <meta name="keywords" content="UI/UX Designer, Figma, Portfolio, Wireframing, Prototyping, Hyderabad">
+  <meta property="og:title" content="N. Eesh Kumar — UI/UX Designer">
+  <meta property="og:description" content="Aspiring UI/UX Designer passionate about intuitive web and mobile experiences.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#050507">
+  <title>N. Eesh Kumar — Aspiring UI/UX Designer</title>
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ===== LOADER ===== -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-logo">EK</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+  <div class="loader-text">Loading experience</div>
+</div>
+
+<!-- ===== SCROLL PROGRESS ===== -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigation">
+  <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#achievements">Achievements</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">N. Eesh Kumar</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="nav-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ===========================
+     HERO SECTION
+     =========================== -->
+<section id="hero" aria-label="Introduction">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+
+  <div class="hero-inner container hero-split">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Open to internships &amp; UI/UX roles
+      </div>
+
+      <h1 class="h-display hero-name">
+        N. Eesh <span class="gradient-text">Kumar</span>
+      </h1>
+
+      <div class="hero-role">
+        <span id="typed-role">UI/UX Designer</span><span style="color:var(--accent);animation:pulse 1s infinite">|</span>
+      </div>
+
+      <p class="hero-desc">
+        Aspiring UI/UX Designer with experience creating user interfaces in Figma. Passionate about designing intuitive, user-centered digital experiences for web and mobile applications.
+      </p>
+
+      <div class="hero-actions">
+        <span class="magnetic">
+          <a href="#projects" class="btn btn-primary magnetic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            View Projects
+          </a>
+        </span>
+        <span class="magnetic">
+          <a href="resume/resume.pdf" download class="btn btn-ghost magnetic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+        </span>
+        <span class="magnetic">
+          <a href="#contact" class="btn btn-outline magnetic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Say Hello
+          </a>
+        </span>
+      </div>
+
+      <div class="hero-stats reveal">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="5" data-suffix="">0</div>
+          <div class="hero-stat-label">Projects Built</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="30" data-suffix="+">0+</div>
+          <div class="hero-stat-label">Figma Mentees Trained</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="1" data-suffix="">0</div>
+          <div class="hero-stat-label">Research Paper</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2026</div>
+          <div class="hero-stat-label">B.Tech Graduating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap reveal" aria-hidden="false">
+      <div class="hero-photo-frame">
+        <img src="assets/images/my%20pic-Photoroom.png" alt="N. Eesh Kumar — UI/UX Designer" class="hero-photo" width="360" height="450">
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===========================
+     ABOUT SECTION
+     =========================== -->
+<section id="about" aria-label="About me">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="h-xl reveal" style="margin-bottom: 32px;">
+          Designing with intention,<br>
+          <span class="italic gradient-text">learning every day.</span>
+        </h2>
+        <p class="reveal reveal-delay-1">
+          I'm an <strong>aspiring UI/UX Designer</strong> currently pursuing my B.Tech in Electronics and Communication Engineering at Anurag University (graduating 2026). I create user interfaces in Figma and focus on wireframing, prototyping, and user-centered design.
+        </p>
+        <p class="reveal reveal-delay-2">
+          I'm passionate about designing intuitive digital experiences for web and mobile applications. My work spans academic projects, hackathons, and hands-on UI design — from an AI vehicle health monitoring dashboard to a responsive Apple iPhone landing page redesign.
+        </p>
+        <p class="reveal reveal-delay-3">
+          As a <strong>Figma Mentor at Design Forge</strong>, I've trained 30+ students in design fundamentals. I published a research paper on Single-Axis Solar Tracking (IJIRT), was a finalist in the National AgriTech Hackathon, and participated in Vision Nova 2k25.
+        </p>
+        <p class="reveal reveal-delay-4">
+          I'm actively seeking opportunities to contribute to innovative products while continuously improving my design and user experience skills.
+        </p>
+        <div class="reveal reveal-delay-4" style="margin-top: 36px;">
+          <a href="#contact" class="btn btn-primary magnetic" style="display: inline-flex;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            Let's Work Together
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <!-- Education -->
+        <div class="info-card reveal reveal-delay-1">
+          <div class="info-card-label">Education</div>
+          <div class="info-card-title">B.Tech — Electronics &amp; Communication</div>
+          <div class="info-card-meta">Anurag University · Expected 2026</div>
+        </div>
+        <div class="info-card reveal reveal-delay-2">
+          <div class="info-card-label">Earlier Education</div>
+          <div class="info-card-title">Vision Junior College (MPC)</div>
+          <div class="info-card-meta">12th Grade · 2022 · Green Fields High School · 10th · 2020</div>
+        </div>
+        <div class="info-card reveal reveal-delay-3" style="background: linear-gradient(135deg, rgba(124,109,250,0.08), rgba(244,114,182,0.04)); border-color: rgba(124,109,250,0.2);">
+          <div class="info-card-label">Current Focus</div>
+          <div style="font-size: 0.95rem; color: var(--text-1); line-height: 1.7;">
+            UI/UX design, Figma prototyping, and building portfolio-ready case studies for web and mobile apps.
+          </div>
+        </div>
+        <div class="info-card reveal reveal-delay-4">
+          <div class="info-card-label">Based In</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Hyderabad, Telangana, India
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.9rem;color:var(--text-1);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Open to: <span style="color:var(--emerald)">Internships &amp; entry-level roles</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     SKILLS SECTION
+     =========================== -->
+<section id="skills" aria-label="Skills">
+  <div class="container">
+    <div class="skills-header reveal">
+      <div class="section-label" style="justify-content:center;">Expertise</div>
+      <h2 class="h-xl" style="text-align:center; margin-bottom: 16px;">
+        Where design meets<br><span class="italic gradient-text">engineering</span>
+      </h2>
+      <p style="color: var(--text-2); font-size: 1rem; line-height: 1.7;">
+        Core design skills from my resume — wireframing, prototyping, and user-centered UI in Figma.
+      </p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon" style="color: var(--pink);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5.5A3.5 3.5 0 018.5 2H12v7H8.5A3.5 3.5 0 015 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 110 7H12V2z"/><path d="M12 12.5a3.5 3.5 0 117 0 3.5 3.5 0 01-7 0z"/><path d="M5 19.5A3.5 3.5 0 018.5 16H12v3.5a3.5 3.5 0 11-7 0z"/><path d="M5 12.5A3.5 3.5 0 018.5 9H12v7H8.5A3.5 3.5 0 015 12.5z"/></svg>
+        </div>
+        <div class="skill-name">UI/UX &amp; Figma Design</div>
+        <div class="skill-desc">User interfaces, visual design, and high-fidelity screens for web and mobile.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="88"></div></div>
+        <span class="skill-pct">88% proficiency</span>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+        </div>
+        <div class="skill-name">Wireframing</div>
+        <div class="skill-desc">Low-fidelity layouts and information architecture before visual design.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="85"></div></div>
+        <span class="skill-pct">85% proficiency</span>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-icon" style="color: var(--cyan);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="skill-name">Prototyping</div>
+        <div class="skill-desc">Interactive Figma prototypes for user flows and stakeholder reviews.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="82"></div></div>
+        <span class="skill-pct">82% proficiency</span>
+      </div>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="skill-icon" style="color: var(--emerald);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="skill-name">User Research</div>
+        <div class="skill-desc">Understanding user needs to inform design decisions and problem-solving.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="78"></div></div>
+        <span class="skill-pct">78% proficiency</span>
+      </div>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="skill-icon" style="color: var(--accent-2);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="skill-name">Web &amp; App Design</div>
+        <div class="skill-desc">Responsive layouts and mobile-first experiences for digital products.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="80"></div></div>
+        <span class="skill-pct">80% proficiency</span>
+      </div>
+      <div class="skill-card reveal reveal-delay-3">
+        <div class="skill-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="skill-name">Canva Design</div>
+        <div class="skill-desc">Visual assets, presentations, and marketing graphics.</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-pct="86"></div></div>
+        <span class="skill-pct">86% proficiency</span>
+      </div>
+    </div>
+
+    <!-- Tool marquee -->
+    <div class="marquee-wrapper reveal" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- First set -->
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Figma</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Wireframing</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>Prototyping</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/></svg>User Research</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>Canva</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>PowerPoint</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Teamwork</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/></svg>Problem Solving</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/></svg>Self Learning</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Creativity</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>Figma</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>Wireframing</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>Prototyping</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/></svg>User Research</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>Canva</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>PowerPoint</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Teamwork</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/></svg>Problem Solving</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/></svg>Self Learning</span>
+        <span class="marquee-item"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Creativity</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     PROJECTS SECTION
+     =========================== -->
+<section id="projects" aria-label="Projects">
+  <div class="container">
+    <div class="projects-header">
+      <div>
+        <div class="section-label">Selected Work</div>
+        <h2 class="h-xl reveal" style="margin-top: 8px;">Projects I've<br><span class="italic gradient-text">worked on</span></h2>
+      </div>
+      <div class="projects-filter reveal">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Projects grid populated by JS -->
+    <div class="projects-grid" id="projects-grid">
+      <div style="grid-column:1/-1; text-align:center; padding: 60px 0; color: var(--text-3); font-size: 0.9rem;">
+        Loading projects...
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     ACHIEVEMENTS SECTION
+     =========================== -->
+<section id="achievements" aria-label="Achievements">
+  <div class="container">
+    <div class="section-label reveal">Achievements</div>
+    <h2 class="h-xl reveal reveal-delay-1" style="margin-bottom: 60px;">Learning, building,<br><span class="italic gradient-text">and growing</span></h2>
+
+    <div class="certs-grid certs-grid--certs">
+      <div class="cert-card reveal reveal-delay-1">
+        <button type="button" class="cert-thumb cert-thumb-btn" data-cert="certificates/IJIRT papaer publish cirtificate 3.jpeg" data-cert-title="IJIRT — Certificate of Publication" aria-label="View IJIRT publication certificate">
+          <img src="certificates/IJIRT papaer publish cirtificate 3.jpeg" alt="IJIRT publication certificate — Single-Axis Solar Tracking">
+        </button>
+        <div class="cert-info">
+          <div class="cert-issuer">IJIRT · Research</div>
+          <div class="cert-name">Single-Axis Solar Tracking</div>
+          <div class="cert-date">Vol 11, Issue 10 · March 2025 · Reg. ID 173895</div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert="certificates/IJIRT papaer publish cirtificate 3.jpeg" data-cert-title="IJIRT — Certificate of Publication">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View Certificate
+            </button>
+            <a href="https://ijirt.org/Article?manuscript=173895" target="_blank" rel="noopener" class="cert-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Read Paper
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-2">
+        <button type="button" class="cert-thumb cert-thumb-btn" data-cert="certificates/agritech cirtificate hackthon.jpeg" data-cert-title="National AgriTech Hackathon 2025" aria-label="View AgriTech hackathon certificate">
+          <img src="certificates/agritech cirtificate hackthon.jpeg" alt="National AgriTech Hackathon 2025 certificate — Finalist">
+        </button>
+        <div class="cert-info">
+          <div class="cert-issuer">RJ E-Nest · DST NIDHI iTBI</div>
+          <div class="cert-name">National AgriTech Hackathon</div>
+          <div class="cert-date">Finalist · Dec 22–23, 2025 · Anurag University</div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert="certificates/agritech cirtificate hackthon.jpeg" data-cert-title="National AgriTech Hackathon 2025">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-3">
+        <button type="button" class="cert-thumb cert-thumb-btn" data-cert="certificates/vision noava cirtificate hackthon 2.jpeg" data-cert-title="Vision Nova 2k25 — 24 Hour Hackathon" aria-label="View Vision Nova hackathon certificate">
+          <img src="certificates/vision noava cirtificate hackthon 2.jpeg" alt="Vision Nova 2k25 hackathon participation certificate">
+        </button>
+        <div class="cert-info">
+          <div class="cert-issuer">Anurag University · Dept. of AI</div>
+          <div class="cert-name">Vision Nova 2k25</div>
+          <div class="cert-date">24 Hour National Hackathon · Mar 6–7, 2025</div>
+          <div class="cert-actions">
+            <button type="button" class="cert-btn" data-cert="certificates/vision noava cirtificate hackthon 2.jpeg" data-cert-title="Vision Nova 2k25 — 24 Hour Hackathon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-thumb">
+          <div class="cert-thumb-placeholder" style="background: linear-gradient(135deg, #f472b6 0%, #7c6dfa 100%); color: white; font-size: 1.4rem; font-weight: bold;">Figma</div>
+        </div>
+        <div class="cert-info">
+          <div class="cert-issuer">Design Forge Club</div>
+          <div class="cert-name">Figma Mentor</div>
+          <div class="cert-date">Trained 30+ students · 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     RESUME SECTION
+     =========================== -->
+<section id="resume" aria-label="Resume">
+  <div class="container">
+    <div class="resume-inner">
+      <!-- Preview -->
+      <div>
+        <div id="resume-preview-btn" class="resume-preview" role="button" tabindex="0" aria-label="Preview resume" style="cursor:pointer;">
+          <div class="resume-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span style="font-size: 0.9rem; color: var(--text-3);">Click to preview</span>
+            <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-3); letter-spacing: 0.1em; margin-top: 4px;">resume.pdf</span>
+          </div>
+          <div class="resume-preview-overlay">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Preview Resume
+          </div>
+        </div>
+      </div>
+
+      <!-- Info -->
+      <div class="resume-right">
+        <div class="resume-title-block">
+          <div class="section-label reveal">Resume</div>
+          <h2 class="h-xl reveal reveal-delay-1" style="margin-top: 8px; margin-bottom: 16px;">
+            Aspiring designer,<br><span class="italic gradient-text">ready to learn</span>
+          </h2>
+          <p class="reveal reveal-delay-2" style="font-size: 1rem; color: var(--text-2); line-height: 1.7;">
+            Download my resume for education, projects, skills, and achievements — including AutoGuard, iPhone landing page design, and hackathon participation.
+          </p>
+        </div>
+
+        <div class="resume-actions reveal reveal-delay-3">
+          <a href="resume/resume.pdf" download class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <button id="resume-preview-btn-2" class="btn btn-ghost" onclick="document.getElementById('resume-preview-btn').click()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Full Resume
+          </button>
+        </div>
+
+        <!-- Key highlights -->
+        <div class="reveal reveal-delay-4" style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size: 0.85rem; color: var(--text-2);">Available for immediate start</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size: 0.85rem; color: var(--text-2);">Open to internships &amp; entry-level UI/UX roles</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius-md);">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"/></svg>
+            <span style="font-size: 0.85rem; color: var(--text-2);">Based in Hyderabad · open to relocate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     CONTACT SECTION
+     =========================== -->
+<section id="contact" aria-label="Contact">
+  <div class="contact-bg" aria-hidden="true"></div>
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="section-label reveal">Contact</div>
+        <h2 class="h-xl reveal reveal-delay-1" style="margin-top: 8px;">
+          Let's build<br><span class="italic gradient-text">something great.</span>
+        </h2>
+        <p class="contact-tagline reveal reveal-delay-2">
+          Looking for internships or entry-level UI/UX opportunities? I'd love to hear from you — I typically respond within 24 hours.
+        </p>
+        <div class="contact-links reveal reveal-delay-3">
+          <a href="mailto:eeshnandamala@gmail.com" class="contact-link" data-contact="email">
+            <div class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-platform">Email</div>
+              <div class="contact-link-value" data-contact-label>eeshnandamala@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+916303459586" class="contact-link" data-contact="phone">
+            <div class="contact-link-icon" style="color: var(--emerald);">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-platform">Phone</div>
+              <div class="contact-link-value" data-contact-label>+91 63034 59586</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/eeshkumar2" target="_blank" rel="noopener noreferrer" class="contact-link" data-contact="linkedin">
+            <div class="contact-link-icon" style="color: #0077b5;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-platform">LinkedIn</div>
+              <div class="contact-link-value" data-contact-label>Nandamala Eesh Kumar</div>
+            </div>
+          </a>
+          <a href="https://github.com/eeshkumar2" target="_blank" rel="noopener noreferrer" class="contact-link" data-contact="github">
+            <div class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-platform">GitHub</div>
+              <div class="contact-link-value">/eeshkumar2</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="reveal reveal-delay-2">
+        <form id="contact-form" class="contact-form" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true" hidden>
+          <div style="font-family: var(--font-display); font-size: 1.4rem; color: var(--text-0); margin-bottom: 24px; letter-spacing: -0.02em;">
+            Send me a message
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label for="form-name">Name</label>
+              <input type="text" id="form-name" name="name" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="form-email">Email</label>
+              <input type="email" id="form-email" name="email" class="form-input" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form-subject">Subject</label>
+            <select id="form-subject" name="subject" class="form-select">
+              <option value="">Select a topic...</option>
+              <option value="internship">Internship opportunity</option>
+              <option value="fulltime">Entry-level role</option>
+              <option value="collab">Project collaboration</option>
+              <option value="other">Just saying hi</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="form-message">Message</label>
+            <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your project, timeline, and what you're looking for..." required></textarea>
+          </div>
+          <div id="form-error" class="form-error" role="alert"></div>
+          <div id="form-success" class="form-success">
+            ✓ Message sent! I'll get back to you within 24 hours.
+          </div>
+          <button type="submit" class="btn btn-primary form-submit magnetic">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#hero" class="footer-logo">N. Eesh Kumar</a>
+      <p class="footer-copy">© 2026 N. Eesh Kumar. Designed &amp; built with care.</p>
+      <div class="footer-socials">
+        <a href="mailto:eeshnandamala@gmail.com" class="footer-social" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/eeshkumar2" target="_blank" rel="noopener noreferrer" class="footer-social" data-contact="linkedin" aria-label="LinkedIn — Nandamala Eesh Kumar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/eeshkumar2" target="_blank" rel="noopener" class="footer-social" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===========================
+     PROJECT MODAL
+     =========================== -->
+<div class="modal-overlay" id="project-modal" role="dialog" aria-label="Project details" aria-modal="true">
+  <div class="modal">
+    <button class="modal-close" id="project-modal-close" aria-label="Close project details">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="project-modal-body" style="padding-top: 24px;"></div>
+  </div>
+</div>
+
+<!-- ===========================
+     CERTIFICATE MODAL
+     =========================== -->
+<div class="modal-overlay" id="cert-modal" role="dialog" aria-label="Certificate preview" aria-modal="true">
+  <div class="modal" style="max-width: 900px;">
+    <button class="modal-close" id="cert-modal-close" aria-label="Close certificate">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div style="padding: 20px 32px 32px;">
+      <div id="cert-modal-title" style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;">Certificate</div>
+      <div class="cert-modal-img-wrap">
+        <img id="cert-modal-img" src="" alt="Certificate preview">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===========================
+     RESUME MODAL
+     =========================== -->
+<div class="modal-overlay" id="resume-modal" role="dialog" aria-label="Resume preview" aria-modal="true">
+  <div class="modal" style="max-width: 800px;">
+    <button class="modal-close" id="resume-modal-close" aria-label="Close resume">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div style="padding: 20px 32px 32px;">
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;">Resume Preview</div>
+      <div style="background: var(--bg-3); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 1/1.41;">
+        <iframe src="resume/resume.pdf" title="N. Eesh Kumar Resume" style="width:100%;height:100%;min-height:520px;border:none;"></iframe>
+      </div>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="resume/resume.pdf" download class="btn btn-primary" style="display: inline-flex; text-decoration: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

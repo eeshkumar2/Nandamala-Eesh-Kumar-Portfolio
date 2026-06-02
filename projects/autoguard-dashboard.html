@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoGuard — Vehicle Health Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: #12151c;
+      --panel-2: #181c26;
+      --border: rgba(255,255,255,0.08);
+      --text: #f4f6fb;
+      --muted: #8b93a7;
+      --accent: #6366f1;
+      --accent-soft: rgba(99,102,241,0.15);
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --danger: #f87171;
+      --cyan: #22d3ee;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      min-height: calc(100vh - 40px);
+    }
+    .sidebar {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand span {
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      display: grid; place-items: center;
+      font-size: 0.75rem;
+    }
+    .nav-item {
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: default;
+    }
+    .nav-item.active {
+      background: var(--accent-soft);
+      color: var(--text);
+      font-weight: 600;
+    }
+    .main { display: flex; flex-direction: column; gap: 16px; }
+    .topbar {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .topbar h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .topbar p { color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(52,211,153,0.12);
+      color: var(--ok);
+      border: 1px solid rgba(52,211,153,0.25);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .metric-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .metric-value { font-size: 1.6rem; font-weight: 700; letter-spacing: -0.03em; }
+    .metric-sub { font-size: 0.75rem; margin-top: 6px; }
+    .metric.ok .metric-sub { color: var(--ok); }
+    .metric.warn .metric-sub { color: var(--warn); }
+    .metric.danger .metric-sub { color: var(--danger); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 12px;
+      flex: 1;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .panel h2 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      height: 140px;
+      padding-top: 8px;
+    }
+    .bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .bar {
+      width: 100%;
+      border-radius: 6px 6px 2px 2px;
+      background: linear-gradient(180deg, var(--accent), #818cf8);
+      min-height: 12px;
+      transition: height 0.6s ease;
+    }
+    .bar-label { font-size: 0.65rem; color: var(--muted); }
+    .alerts { display: flex; flex-direction: column; gap: 10px; }
+    .alert {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel-2);
+      font-size: 0.82rem;
+    }
+    .alert strong { display: block; margin-bottom: 4px; font-size: 0.85rem; }
+    .alert span { color: var(--muted); font-size: 0.75rem; }
+    .alert.warn { border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.06); }
+    .alert.danger { border-color: rgba(248,113,113,0.3); background: rgba(248,113,113,0.06); }
+    .components {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .comp {
+      padding: 12px;
+      border-radius: 12px;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+    }
+    .comp-name { font-size: 0.8rem; font-weight: 600; }
+    .comp-status { font-size: 0.7rem; margin-top: 6px; color: var(--ok); }
+    .comp-status.warn { color: var(--warn); }
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .grid-2 { grid-template-columns: 1fr; }
+      .components { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><span>AG</span> AutoGuard</div>
+      <div class="nav-item active">Dashboard</div>
+      <div class="nav-item">Live Sensors</div>
+      <div class="nav-item">Predictions</div>
+      <div class="nav-item">Maintenance</div>
+      <div class="nav-item">Alerts</div>
+      <div class="nav-item">Reports</div>
+    </aside>
+    <div class="main">
+      <header class="topbar">
+        <div>
+          <h1>Vehicle Health Overview</h1>
+          <p>Real-time sensor monitoring · AI anomaly detection</p>
+        </div>
+        <div class="badge">System Healthy</div>
+      </header>
+      <div class="metrics">
+        <div class="metric ok">
+          <div class="metric-label">Engine Health</div>
+          <div class="metric-value">94%</div>
+          <div class="metric-sub">Normal range</div>
+        </div>
+        <div class="metric ok">
+          <div class="metric-label">Battery</div>
+          <div class="metric-value">12.6V</div>
+          <div class="metric-sub">Stable</div>
+        </div>
+        <div class="metric warn">
+          <div class="metric-label">Oil Pressure</div>
+          <div class="metric-value">28 psi</div>
+          <div class="metric-sub">Monitor closely</div>
+        </div>
+        <div class="metric ok">
+          <div class="metric-label">Coolant Temp</div>
+          <div class="metric-value">89°C</div>
+          <div class="metric-sub">Within limits</div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <section class="panel">
+          <h2>Sensor trends (24h)</h2>
+          <div class="chart" id="chart"></div>
+        </section>
+        <section class="panel">
+          <h2>Predictive alerts</h2>
+          <div class="alerts">
+            <div class="alert warn">
+              <strong>Oil filter — service in 12 days</strong>
+              <span>ML confidence 87% · preventive maintenance</span>
+            </div>
+            <div class="alert">
+              <strong>Brake pads — healthy</strong>
+              <span>Next check in 45 days</span>
+            </div>
+            <div class="alert danger">
+              <strong>Coolant level — anomaly detected</strong>
+              <span>Review before long trip · flagged 2h ago</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="panel">
+        <h2>Component status</h2>
+        <div class="components">
+          <div class="comp"><div class="comp-name">Engine</div><div class="comp-status">Optimal</div></div>
+          <div class="comp"><div class="comp-name">Transmission</div><div class="comp-status">Optimal</div></div>
+          <div class="comp"><div class="comp-name">Alternator</div><div class="comp-status warn">Check soon</div></div>
+          <div class="comp"><div class="comp-name">Fuel System</div><div class="comp-status">Optimal</div></div>
+          <div class="comp"><div class="comp-name">Cooling</div><div class="comp-status warn">Monitor</div></div>
+          <div class="comp"><div class="comp-name">Exhaust</div><div class="comp-status">Optimal</div></div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    const heights = [62, 78, 55, 88, 72, 95, 68, 82, 74, 90, 65, 85];
+    const labels = ['6a','9a','12p','3p','6p','9p','12a','3a','6a','9a','12p','3p'];
+    const chart = document.getElementById('chart');
+    heights.forEach((h, i) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'bar-wrap';
+      wrap.innerHTML = `<div class="bar" style="height:${h}%"></div><div class="bar-label">${labels[i]}</div>`;
+      chart.appendChild(wrap);
+    });
+  </script>
+</body>
+</html>
